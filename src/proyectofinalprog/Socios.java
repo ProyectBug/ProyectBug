@@ -26,7 +26,7 @@ public class Socios extends javax.swing.JFrame {
      */
     com.mysql.jdbc.Connection conn=null;
     static String sql="";  
-    
+    Metodos library = new Metodos();
    
     public Socios() {
                                             
@@ -188,7 +188,15 @@ public class Socios extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarButtonActionPerformed
 
     private void bajaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaButtonActionPerformed
-        
+        library.Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
+        String respuesta;
+        respuesta=JOptionPane.showInputDialog("¿Deseas darte de baja?");
+        if(respuesta.equalsIgnoreCase("si")){
+            library.Delete("socios", "idsocio", Integer.parseInt(usuarioField.getText()));
+        }
+        else{
+        JOptionPane.showMessageDialog(null,"Proceso cancelado");
+    }
     }//GEN-LAST:event_bajaButtonActionPerformed
 
     private void connButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connButtonActionPerformed
