@@ -17,6 +17,7 @@ import static proyectofinalprog.Socios.sql;
  *
  * @author Nabor
  */
+
 public class Empleados extends javax.swing.JFrame {
 
     /**
