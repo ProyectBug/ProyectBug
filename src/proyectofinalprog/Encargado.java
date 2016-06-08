@@ -30,6 +30,7 @@ public class Encargado extends javax.swing.JFrame {
         initComponents();
         jPanel1.setVisible(false);
        Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
+       this.setLocationRelativeTo(null);
     }
 
     /**
@@ -48,8 +49,8 @@ public class Encargado extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         eliminarSocio = new javax.swing.JButton();
         despedir = new javax.swing.JButton();
-        dimitir = new javax.swing.JButton();
         ingresar = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,14 +86,12 @@ public class Encargado extends javax.swing.JFrame {
             }
         });
 
-        dimitir.setText("Dimitir");
-        dimitir.addActionListener(new java.awt.event.ActionListener() {
+        ingresar.setText("Registrar Nuevo Empleado");
+        ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dimitirActionPerformed(evt);
+                ingresarActionPerformed(evt);
             }
         });
-
-        ingresar.setText("Registrar Nuevo Empleado");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,12 +99,10 @@ public class Encargado extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(eliminarSocio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(despedir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(dimitir, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(eliminarSocio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(despedir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -117,10 +114,15 @@ public class Encargado extends javax.swing.JFrame {
                 .addComponent(despedir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ingresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dimitir)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
+
+        volver.setText("Volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,6 +140,10 @@ public class Encargado extends javax.swing.JFrame {
                 .addGap(128, 128, 128)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(volver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +161,9 @@ public class Encargado extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addComponent(volver)
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -172,7 +180,7 @@ public class Encargado extends javax.swing.JFrame {
     }//GEN-LAST:event_codigoEnActionPerformed
 
     private void conectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conectarActionPerformed
-       
+       sql="";
         
         MultipleWhere("contraseña","empleados","idempleado",codigoEn.getText(),"ocupacion","Encargado");
         if(passEn.getText().equalsIgnoreCase(sql) /**&& skl.equalsIgnoreCase("Encargado")**/){
@@ -184,15 +192,23 @@ public class Encargado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_conectarActionPerformed
 
-    private void dimitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dimitirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dimitirActionPerformed
-
     private void despedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_despedirActionPerformed
         Encargado.this.setVisible(false);
         DespedirEmpleado obxDE = new DespedirEmpleado();
         obxDE.setVisible(true);
     }//GEN-LAST:event_despedirActionPerformed
+
+    private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
+        Encargado.this.setVisible(false);
+        RegistrarEmpleado obxRE = new RegistrarEmpleado();
+        obxRE.setVisible(true);
+    }//GEN-LAST:event_ingresarActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        Encargado.this.setVisible(false);
+        Logeo obxL = new Logeo();
+        obxL.setVisible(true);
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,11 +250,11 @@ public class Encargado extends javax.swing.JFrame {
     private javax.swing.JButton conectar;
     private javax.swing.JButton desconectar;
     private javax.swing.JButton despedir;
-    private javax.swing.JButton dimitir;
     private javax.swing.JButton eliminarSocio;
     private javax.swing.JButton ingresar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField passEn;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 
   public String MultipleWhere(String parametro,String nomTabla,String ID,String valores,String ID2,String valores2) {

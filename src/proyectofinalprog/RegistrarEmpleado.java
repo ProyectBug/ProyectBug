@@ -20,6 +20,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
     public RegistrarEmpleado() {
         initComponents();
         library.Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
+        this.setLocationRelativeTo(null);
     }
 
     /**

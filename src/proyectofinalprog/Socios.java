@@ -36,6 +36,7 @@ public class Socios extends javax.swing.JFrame {
         jPanel2.setVisible(false);
         jTextArea2.setEditable(false);
         Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
+        this.setLocationRelativeTo(null);
         
        
         

@@ -56,6 +56,11 @@ public class Logeo extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 220, 60));
 
         jButton3.setText("Encargado");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 220, 60));
 
         jButton4.setText("Volver");
@@ -86,6 +91,12 @@ public class Logeo extends javax.swing.JFrame {
        obxS.setVisible(true);
        Logeo.this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Encargado obxE = new Encargado();
+        obxE.setVisible(true);
+        Logeo.this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
