@@ -79,6 +79,11 @@ public class Encargado extends javax.swing.JFrame {
         });
 
         despedir.setText("Despedir Empleado");
+        despedir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                despedirActionPerformed(evt);
+            }
+        });
 
         dimitir.setText("Dimitir");
         dimitir.addActionListener(new java.awt.event.ActionListener() {
@@ -182,6 +187,12 @@ public class Encargado extends javax.swing.JFrame {
     private void dimitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dimitirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dimitirActionPerformed
+
+    private void despedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_despedirActionPerformed
+        Encargado.this.setVisible(false);
+        DespedirEmpleado obxDE = new DespedirEmpleado();
+        obxDE.setVisible(true);
+    }//GEN-LAST:event_despedirActionPerformed
 
     /**
      * @param args the command line arguments
