@@ -17,6 +17,7 @@ public class Suscribirse extends javax.swing.JFrame {
 Metodos library = new Metodos();
     com.mysql.jdbc.Connection conn;
     public Suscribirse() {
+        this.setLocationRelativeTo(null);
         initComponents();
         areaInfo.setVisible(false);
         areaInfo.setEditable(false);
@@ -183,9 +184,8 @@ Metodos library = new Metodos();
     }//GEN-LAST:event_infoTarifaActionPerformed
 
     private void registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarseActionPerformed
- 
      library.Insertar("socios","nombre,edad,correoE,tarifaMes,contraseña","'"+nombreReg.getText()+"'"+","+edadReg.getText()+","+"'"+correoReg.getText()+"'"+","+tarifaReg.getText()+","+"'"+passReg.getText()+"'");
- 
+
     }//GEN-LAST:event_registrarseActionPerformed
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
