@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package proyectofinalprog;
-
+import DataBaseLibrary.Metodos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -22,11 +22,13 @@ public class Empleados extends javax.swing.JFrame {
     /**
      * Creates new form Empleados
      */
+    Metodos library = new Metodos();
     com.mysql.jdbc.Connection conn=null;
     Socios obxS = new Socios();
     static String sql="";
     public Empleados() {
         initComponents();
+        this.setLocationRelativeTo(null);
         jPanel1.setVisible(false);
         Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
     }
@@ -158,9 +160,13 @@ public class Empleados extends javax.swing.JFrame {
 
     private void dimisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dimisionActionPerformed
         String respuesta;
+      library.Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
       respuesta=JOptionPane.showInputDialog("¿Estas seguro de continuar con la solicitud de dimisión? \n .-Si .-No ");
       if(respuesta.equalsIgnoreCase("si")){
+          
+          library.Delete("empleados", "idempleado",empleCod.getText());
           JOptionPane.showMessageDialog(null,"Su petición ha sido enviada. \n Sus datos de empleado serán borrados del registro de empleados. \n El encargado se pondrá en contacto para finalizar el proceso de dimisión.");
+          
       }
     }//GEN-LAST:event_dimisionActionPerformed
 
