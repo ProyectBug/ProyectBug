@@ -42,38 +42,43 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="registrarse" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nombreReg" max="32767" attributes="0"/>
-                          <Component id="passReg" pref="162" max="32767" attributes="0"/>
-                          <Component id="edadReg" max="32767" attributes="0"/>
-                          <Component id="correoReg" max="32767" attributes="0"/>
-                          <Component id="tarifaReg" max="32767" attributes="0"/>
-                          <Component id="infoTarifa" alignment="1" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="registrarse" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="infoTarifa" min="-2" pref="162" max="-2" attributes="0"/>
+                                  <Component id="nombreReg" pref="182" max="32767" attributes="0"/>
+                                  <Component id="passReg" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="edadReg" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="correoReg" max="32767" attributes="0"/>
+                                  <Component id="tarifaReg" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="volver" min="-2" pref="99" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                              <Component id="obtener" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="volver" min="-2" pref="99" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="codigoLabel" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="getCod" min="-2" pref="121" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                      <Component id="obtener" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="getCod" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -118,7 +123,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="296" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" pref="190" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -150,7 +155,7 @@
     </Container>
     <Component class="javax.swing.JTextField" name="nombreReg">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre "/>
+        <Property name="text" type="java.lang.String" value="Nombre y Apellidos"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="passReg">
