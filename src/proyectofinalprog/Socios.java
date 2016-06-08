@@ -157,7 +157,7 @@ public class Socios extends javax.swing.JFrame {
             }
         });
 
-        nombreMod.setText("Nombre");
+        nombreMod.setText("Nombre y Apellidos");
 
         jLabel2.setText("Introduce nuevos datos");
 
