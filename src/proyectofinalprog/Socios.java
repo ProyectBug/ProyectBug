@@ -29,10 +29,12 @@ public class Socios extends javax.swing.JFrame {
     Metodos library = new Metodos();
    
     public Socios() {
-                                            
+        this.setLocationRelativeTo(null);
         Metodos library = new Metodos();
         initComponents();
         jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        jTextArea2.setEditable(false);
         Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
         
        
@@ -66,6 +68,17 @@ public class Socios extends javax.swing.JFrame {
         modificarButton = new javax.swing.JButton();
         passField = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        nombreMod = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        edadMod = new javax.swing.JTextField();
+        correoMod = new javax.swing.JTextField();
+        tarifaMod = new javax.swing.JTextField();
+        passMod = new javax.swing.JTextField();
+        modiButton = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
 
         jButton2.setText("jButton2");
 
@@ -90,7 +103,7 @@ public class Socios extends javax.swing.JFrame {
             }
         });
 
-        usuarioField.setText("Usuario");
+        usuarioField.setText("Codigo Usuario");
 
         connButton.setText("Conectarse");
         connButton.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +120,11 @@ public class Socios extends javax.swing.JFrame {
         });
 
         modificarButton.setText("Modificar datos");
+        modificarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -125,7 +143,7 @@ public class Socios extends javax.swing.JFrame {
                 .addComponent(bajaButton)
                 .addGap(18, 18, 18)
                 .addComponent(modificarButton)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         passField.setText("Contraseña");
@@ -137,34 +155,125 @@ public class Socios extends javax.swing.JFrame {
             }
         });
 
+        nombreMod.setText("Nombre");
+
+        jLabel2.setText("Introduce nuevos datos");
+
+        edadMod.setText("Edad");
+        edadMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edadModActionPerformed(evt);
+            }
+        });
+
+        correoMod.setText("CorreoE");
+
+        tarifaMod.setText("TarifaMes");
+
+        passMod.setText("Contraseña");
+
+        modiButton.setText("Modificar");
+        modiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modiButtonActionPerformed(evt);
+            }
+        });
+
+        cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Nota: es necesario \nintroducir todos los\ndatos nuevamente.\n");
+        jScrollPane2.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(passMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                            .addComponent(tarifaMod, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(correoMod, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(edadMod, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreMod, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(modiButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelar)
+                .addGap(38, 38, 38))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(nombreMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edadMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(correoMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tarifaMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modiButton)
+                    .addComponent(cancelar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usuarioField, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(passField)
+                            .addComponent(usuarioField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(connButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(92, 92, 92)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)))
+                    .addComponent(registrarButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(registrarButton)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addGap(195, 195, 195)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(usuarioField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,9 +281,14 @@ public class Socios extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
-                            .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(registrarButton)
+                            .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 260, Short.MAX_VALUE)
+                        .addComponent(registrarButton))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -190,7 +304,7 @@ public class Socios extends javax.swing.JFrame {
     private void bajaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaButtonActionPerformed
         library.Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
         String respuesta;
-        respuesta=JOptionPane.showInputDialog("¿Deseas darte de baja?");
+        respuesta=JOptionPane.showInputDialog("¿Deseas darte de baja? \n .-Si .-No" );
         if(respuesta.equalsIgnoreCase("si")){
             library.Delete("socios", "idsocio", Integer.parseInt(usuarioField.getText()));
         }
@@ -212,8 +326,30 @@ public class Socios extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        usuarioField.setText("Codigo Usuario");
+        passField.setText("Contraseña");
+        
         sql="";
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void modificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarButtonActionPerformed
+        jPanel2.setVisible(true);
+        Conectar("jdbc:mysql://localhost", "zoo","user=root","password=Sobrada12345");
+       
+    }//GEN-LAST:event_modificarButtonActionPerformed
+
+    private void edadModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edadModActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edadModActionPerformed
+
+    private void modiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modiButtonActionPerformed
+       Actualize("socios","idsocio", usuarioField.getText());
+    }//GEN-LAST:event_modiButtonActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+       jPanel2.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,22 +359,33 @@ public class Socios extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bajaButton;
+    private javax.swing.JButton cancelar;
     private javax.swing.JButton connButton;
+    private javax.swing.JTextField correoMod;
+    private javax.swing.JTextField edadMod;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton modiButton;
     private javax.swing.JButton modificarButton;
+    private javax.swing.JTextField nombreMod;
     private javax.swing.JTextField passField;
+    private javax.swing.JTextField passMod;
     private javax.swing.JButton registrarButton;
+    private javax.swing.JTextField tarifaMod;
     private javax.swing.JTextField usuarioField;
     // End of variables declaration//GEN-END:variables
- public void buscar(String parametro,String nomTabla,String ID,String valores) {
+ public String buscar(String parametro,String nomTabla,String ID,String valores) {
        
       
        try {
@@ -258,7 +405,8 @@ public class Socios extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.out.println("Error en la visualizacion "+ex.getMessage());
         }
-        
+        return sql;
+                
  }
 
         public Connection Conectar(String servidor,String base,String usuario,String contraseña){
@@ -270,6 +418,17 @@ public class Socios extends javax.swing.JFrame {
         }
         return conn; 
     }
+         public void Actualize(String tabla,String primary_Key,String id){
+           try {
+            com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) conn.prepareStatement("Update "+tabla+" set nombre='"+nombreMod.getText()+"' ,edad='"+edadMod.getText()+"' ,correoE='"+correoMod.getText()+"' ,tarifaMes='"+tarifaMod.getText()+"' ,contraseña='"+passMod.getText()+"' where "+primary_Key+" ='"+id+"'");
+            ps.executeUpdate();
+            
+           
+               System.out.println("Actualización exitosa");
+        } catch (SQLException actualize) {
+               System.out.println(actualize.getMessage());
+        }
+      }
 }
             
         
