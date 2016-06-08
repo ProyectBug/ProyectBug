@@ -16,6 +16,7 @@ public class Logeo extends javax.swing.JFrame {
      */
     public Logeo() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -36,7 +37,6 @@ public class Logeo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 32, 29, 419));
 
         jButton1.setText("Empleado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -44,7 +44,7 @@ public class Logeo extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 220, 60));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 220, 70));
 
         jButton2.setText("Socios");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -52,10 +52,10 @@ public class Logeo extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 210, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 220, 60));
 
         jButton3.setText("Encargado");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 210, 60));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 220, 60));
 
         jButton4.setText("Volver");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +63,7 @@ public class Logeo extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 130, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 130, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
