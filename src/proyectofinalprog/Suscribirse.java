@@ -55,6 +55,7 @@ Metodos library = new Metodos();
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro de Socio");
 
         areaInfo.setColumns(20);
         areaInfo.setRows(5);
